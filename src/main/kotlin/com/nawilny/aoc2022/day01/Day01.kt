@@ -3,13 +3,13 @@ package com.nawilny.aoc2022.day01
 import com.nawilny.aoc2022.common.Input
 
 fun main() {
-    val elves = parse(Input.readFileLines("day01", "input1.txt"))
+    val elves = parse(Input.readFileLines("day01", "input.txt"))
     println(elves)
     println(elves.map { it.calories() }.maxOrNull())
     println(elves.map { it.calories() }.sortedDescending().take(3).sum())
 }
 
-data class Elf(val bag: List<Int>) {
+private data class Elf(val bag: List<Int>) {
     fun calories() = bag.sum()
 }
 
