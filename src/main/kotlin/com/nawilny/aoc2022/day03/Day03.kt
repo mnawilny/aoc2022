@@ -3,7 +3,7 @@ package com.nawilny.aoc2022.day03
 import com.nawilny.aoc2022.common.Input
 
 fun main() {
-    val rucksacks = Input.readFileLines("day03", "input.txt").map { it.trim() }.filter { it.isNotEmpty() }
+    val rucksacks = Input.readFileLinesNormalized("day03", "input.txt")
     println(rucksacks
         .map { it.substring(0 until (it.length / 2)) to it.substring((it.length / 2) until it.length) }
         .map { findCommon(it.first, it.second) }

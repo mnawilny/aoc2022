@@ -10,4 +10,8 @@ object Input {
                 ?: throw NullPointerException("File $path not found")
     }
 
+    fun readFileLinesNormalized(day: String, fileName: String): List<String> {
+        return readFileLines(day, fileName).map { it.trim() }.filter { it.isNotEmpty() }
+    }
+
 }

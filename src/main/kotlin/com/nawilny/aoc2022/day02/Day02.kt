@@ -5,9 +5,7 @@ import com.nawilny.aoc2022.day02.Move.*
 import com.nawilny.aoc2022.day02.Outcome.*
 
 fun main() {
-    val moves = Input.readFileLines("day02", "input.txt")
-        .map { it.trim() }
-        .filter { it.isNotEmpty() }
+    val moves = Input.readFileLinesNormalized("day02", "input.txt")
         .map { it.split(" ") }
         .map { it[0] to it[1] }
 
