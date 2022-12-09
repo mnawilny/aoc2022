@@ -1,6 +1,8 @@
 package com.nawilny.aoc2022.day08
 
+import com.nawilny.aoc2022.common.Direction
 import com.nawilny.aoc2022.common.Input
+import com.nawilny.aoc2022.common.Point
 
 fun main() {
     val lines = Input.readFileLinesNormalized("day08", "input.txt")
@@ -45,13 +47,4 @@ private fun calculateScenicScoreInDirection(p: Point, direction: Direction, tree
         score++
     }
     return score
-}
-
-private data class Point(val x: Int, val y: Int)
-
-private enum class Direction(val next: (Point) -> Point) {
-    UP({ Point(it.x, it.y - 1) }),
-    DOWN({ Point(it.x, it.y + 1) }),
-    LEFT({ Point(it.x - 1, it.y) }),
-    RIGHT({ Point(it.x + 1, it.y) })
 }
