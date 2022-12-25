@@ -12,15 +12,15 @@ private fun snafuToDecimal(s: String): Long {
 }
 
 private fun decimalToSnafu(i: Long): String {
-    var d = i
-    var result = ""
-    while (d > 0) {
-        val s = (d + 2) / 5
-        val remain = d - (s * 5)
+    var toAnalyse = i
+    val result = mutableListOf<Char>()
+    while (toAnalyse > 0) {
+        val multiply = (toAnalyse + 2) / 5
+        val remain = toAnalyse - (multiply * 5)
         result += decimalDigitToSnafu(remain)
-        d = s
+        toAnalyse = multiply
     }
-    return result.reversed()
+    return result.reversed().joinToString("")
 }
 
 private fun pow5(i: Int) = (0 until i).fold(1L) { acc, _ -> acc * 5 }
